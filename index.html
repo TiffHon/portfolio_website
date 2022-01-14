@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+
+<body>
+    <header>
+        <!-- site header, have logo, maybe name, maybe a button for about the site (not me) -->
+        <img id="logo" src="assets/images/logo-01.svg" width="200px" height="200px"></img>
+        <h1>Tiffany Hon</h1>
+    
+    </header>
+    
+    <button type=button id="testBtn">Test Modal</button>
+    
+    <!-- container of images for the site -->
+   <div class="hidden">
+        <img class=image id="thumb_descent" src="assets/images/thumb_descent.jpg"></img>
+        <img class=image id="thumb_helloworld" src="assets/images/thumb_helloworld.jpg"></img>
+        <img class=image id="thumb_ac-ex" src="assets/images/thumb_ac-ex.jpg"></img>
+        <img class=image id="thumb_osemi" src="assets/images/thumb_osemi.png"></img>
+
+        <img class=image id="desk" src="assets/images/desk.png" ></img>
+        <img class=image id="laptop" src="assets/images/laptop.png" ></img>
+        <img class=image id="shelf" src="assets/images/shelf.png" ></img>
+        <img class=image id="me" src="assets/images/face.png" alt="tiffany's face"></img>
+   </div>
+   
+   <!-- all the canvases that appear on screen -->
+   <canvas id="wallCanvas" width="1800px;" height="400px;"></canvas>
+   <canvas id="deskCanvas" width="800px;" height="600px;"></canvas>
+   <canvas id="meCanvas" width="400px;" height="400px;"></canvas>
+   <canvas id="shelfCanvas" width="450px;" height="600px;"></canvas>
+
+<!-- Modals -->
+<div id=modal class="modal">
+
+    <div id=descentModal class="descent-content" style="display: none;">
+        <span class="close">&times;</span>
+        <video width="320" height="240" controls autoplay>
+            <source src="assets/videos/9.mp4" type="video/mp4">
+        </video>   
+        <h1>descent</h1>
+
+        <pre>
+        year: 2021
+        medium: p5.js, webgazer.js, projection, skin
+        dimensions: installation, variable
+        </pre>
+
+        <p>brief: Accountable, embodied, place-based engagement with research and material</p>
+        <p>This piece was created as a part of <i>Materials and Methods: Research</i> taught by Susan Blight. I am grateful for her support and teachings which have lead to the shaping and reshaping my process and practice. Thank all those that made time to let me interview them to better understand my own relationship with myself.</p>
+        <p>I set out to unpack my feelings of <em>uneasy</em> stemming from that tattoos on my body, tattoos that at the same time are a source of <em>comfort</em>. The main themes of descent are hybridity, body sovereignty and permanence. These themes blended further into <a href="https://en.wikipedia.org/wiki/Jook-sing">jook-sing</a>-ness, prescriptions of meaning, and ambiguous space.</p>
+        <p>Although loongs come in different forms, the most recognizable as "Chinese dragon" is commonly associated with wind/rain/water. I cooped this form to represent connection - the internet runs under oceans to connect many of the communities I am a part of. Also as a personal representation of my mom and the efforts she spend to connects my family to myself.</p>
+        <p>The pearl moves based on an eye tracking program which in turn controls the dragon, who sometimes moves towards but mostly moves away. A visual analogy to sentiments of wanting to be seen in contention with not wanting to stand out. </p>
+        <p>Meaning is projected onto physical features yet changes based on the canvas-made body and controlled by the onlooker.</p>
+    </div>
+
+    <div id="botModal" class=bot-content style="display: none;">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Modal Header</h2>
+          </div>
+          <div class="modal-body">
+            <p>Some text in the Modal Body</p>
+            <p>Some other text...</p>
+          </div>
+          <div class="modal-footer">
+            <h3>Modal Footer</h3>
+          </div>
+    </div>
+    
+</div>
+
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="modals.js"></script>
+<script src="image_wall.js"></script>
+<script> 
+$(document).ready(() => {
+    //insert_img("deskCanvas","desk", 30, 90,); 
+    //insert_img("deskCanvas","laptop", 200, 80,); 
+    // insert_img("meCanvas","me", 10, 10,);
+    // insert_img("shelfCanvas","shelf", 10, 10,);
+
+    fill_wall();
+    add_onclick_to_image("thumb_descent", function(){
+        display_modal_content("descentModal"); 
+        display_modal_content("botModal");
+    });
+})
+</script>
+
+</html>
